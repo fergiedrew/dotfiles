@@ -243,6 +243,10 @@ bindsym Ctrl+Shift+c nop
 # Suspend
 bindsym $mod+Shift+period exec systemctl suspend
 
+# Some epic transparency / background stuff 
 exec --no-startup-id picom -b
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst
+
+# Some autolocking, install xautolock and i3lock-fancy
+exec --no-startup-id xautolock -time 15 -locker i3lock-fancy
