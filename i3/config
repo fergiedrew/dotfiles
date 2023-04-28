@@ -239,9 +239,14 @@ exec --no-startup-id picom -daemon
 
 # Obs controls
 bindsym $mod+Shift+o exec obs-studio
-bindsym Ctrl+Shift+c nop
+
 # Suspend
 bindsym $mod+Shift+period exec systemctl suspend
+
+# Lock
+bindsym $mod+Shift+y exec i3lock-fancy
+
+
 
 # Some epic transparency / background stuff 
 exec --no-startup-id picom -b
