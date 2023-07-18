@@ -14,7 +14,12 @@ order += "cpu_usage"
 order += "wireless _first_"
 order += "battery 0"
 order += "tztime local"
+order += "cpu_temperature 1" 
 
+cpu_temperature 1 { 
+    format = "Irving: %degrees °F" 
+    path = "/var/weather" 
+} 
 
 disk "/" {
 format = "/: %percentage_used"

@@ -1,0 +1,26 @@
+general {
+        colors = true
+}
+
+order += "cpu_temperature 0"
+order += "tztime local"
+order += "memory"
+order += "wireless _first_"
+
+cpu_temperature 0 {
+    format = "%degrees °C"
+}
+
+tztime local {
+    format = "%Y-%m-%d %H:%M:%S"
+}
+
+memory { 
+    format = "%used"
+}
+
+wireless _first_ { 
+    format_up = "W: %essid (%bitrate) %ip"
+    format_down = "W: down"
+}
+
