@@ -140,6 +140,7 @@ require("lazy").setup({
 
             -- Adds a number of user-friendly snippets
             "rafamadriz/friendly-snippets",
+
             -- Paths
             "FelipeLema/cmp-async-path",
         },
@@ -238,7 +239,7 @@ require("lazy").setup({
         opts = {},
     },
 
-    -- "gc" to comment visual regions/lines
+    -- "cl" to comment visual regions/lines
     {
         "numToStr/Comment.nvim",
         opts = {
@@ -277,6 +278,15 @@ require("lazy").setup({
         build = ":TSUpdate",
     },
 
+    -- Cool icons
+    "nvim-tree/nvim-web-devicons",
+
+    -- Allows you to browse file system and edit it like a normal buffer
+    {
+        "stevearc/oil.nvim",
+        opts = {},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
     -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
     --       These are some example plugins that I've included in the kickstart repository.
     --       Uncomment any of the lines below to enable them.
@@ -653,7 +663,7 @@ prettier.setup({
         "graphql",
         "html",
         "javascript",
-        "javscriptreact",
+        "javascriptreact",
         "json",
         "less",
         "markdown",
@@ -787,6 +797,10 @@ require("null-ls").setup({
         cspell.diagnostics,
     },
 })
+
+require("oil").setup()
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "Toggle UI" })
 
